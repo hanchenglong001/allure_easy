@@ -1,6 +1,9 @@
+from enum import Enum
+
 from pydantic import BaseModel, Field
 from typing import List, Optional
 from typing_extensions import Literal
+
 
 class Identifiers(BaseModel):
     # 测试结果的唯一标识符
@@ -95,6 +98,7 @@ class Step(BaseModel):
     stop: int
 
     steps: List["Step"] = Field(default_factory=list, description="包含嵌套的步骤或子步骤")
+
 
 
 class Execution(BaseModel):
